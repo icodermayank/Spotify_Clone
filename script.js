@@ -6,21 +6,25 @@ let audioElement = new Audio("songs/1.mp3");
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
-
+let songItems = Array.from(document.getElementsByClassName("songItem"));
 
 
 
 let songs = [
-    {songName:"My song", filepath:"songs/1.mp3", coverPath: "covers/1.png"},
-    {songName:"My song", filepath:"songs/2.mp3", coverPath: "covers/2.png"},
-    {songName:"My song", filepath:"songs/3.mp3", coverPath: "covers/3.png"},
-    {songName:"My song", filepath:"songs/4.mp3", coverPath: "covers/4.png"},
-    {songName:"My song", filepath:"songs/5.mp3", coverPath: "covers/5.png"},
-    {songName:"My song", filepath:"songs/6.mp3", coverPath: "covers/6.png"},
+    {songName:"52 Gaj Ka Daman", filepath:"songs/1.mp3", coverPath: "covers/1.jpg"},
+    {songName:"Diwani Mastani Ho Gai", filepath:"songs/2.mp3", coverPath: "covers/2.jpg"},
+    {songName:"Hari Hari Odhani (Pawan Singh)", filepath:"songs/3.mp3", coverPath: "covers/3.jpg"},
+    {songName:"Raten Lambiyan Lambiyan", filepath:"songs/4.mp3", coverPath: "covers/4.jpg"},
+    {songName:"O Mahi Re Tere Bin Dil Nahi Lagda", filepath:"songs/5.mp3", coverPath: "covers/5.jpg"},
+    {songName:"Long Lachi Song Panjabi", filepath:"songs/6.mp3", coverPath: "covers/6.jpg"},
     
 ]
 
-
+songItems.forEach((element, i) =>{
+    console.log(element,i);
+    element.getElementsByTagName("img")[0].src = songs[i].coverPath;
+    element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
+})
 
 // audioElement.play();
 
